@@ -1,0 +1,112 @@
+.screen { padding: 2rem; }
+
+.header { margin-bottom: 1.5rem; }
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+.header p { font-size: 14px; color: var(--latte); margin-top: 4px; }
+
+.filterBar { display: flex; gap: 6px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+
+.filterTab {
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 0.5px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+  transition: .2s;
+}
+.filterTab.active {
+  background: var(--caramel);
+  color: var(--bg);
+  border-color: var(--caramel);
+  font-weight: 600;
+}
+.filterTab:hover:not(.active) { border-color: var(--border2); color: var(--cream); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  background: var(--card);
+  border: 0.5px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color .2s;
+}
+.card:hover { border-color: var(--border2); }
+.card.hasQty { border-color: rgba(192,120,64,.5); }
+
+.tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.tagPlat    { color: #7A9EBF; }
+.tagDessert { color: #B87A9E; }
+.tagBoisson { color: var(--sage); }
+
+.name {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--cream);
+  line-height: 1.3;
+}
+
+.qtyCtrl {
+  display: flex;
+  align-items: center;
+  background: var(--bg);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.qtyBtn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  color: var(--latte);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .15s;
+  flex-shrink: 0;
+}
+.qtyBtn:hover { background: rgba(192,120,64,.15); color: var(--cream); }
+
+.qtyInput {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--cream);
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  width: 100%;
+  height: 40px;
+}
+.qtyInput::placeholder { color: var(--muted); }
+.qtyInput.nonzero { color: var(--caramel); }
+.qtyInput:focus { color: var(--gold); }
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+}
